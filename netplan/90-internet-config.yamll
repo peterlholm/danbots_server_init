@@ -1,0 +1,24 @@
+#  configuration for fixed internet at futurebox
+#
+
+# This is the network config written by 'subiquity'
+network:
+  ethernets:
+    enp3s0:
+      dhcp4: true
+  version: 2
+
+network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    enp3s0:
+      addresses:
+        - 77.72.50.82/24
+      nameservers:
+        search: [danbots.com]
+        addresses: [178.209.170.3, 178.209.172.3, 1.1.1.1]
+        routes:
+        - to: default
+          via: 77.72.50.254
+

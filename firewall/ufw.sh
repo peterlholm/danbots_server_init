@@ -41,7 +41,10 @@ ufw limit "Postfix"
 # apache
 
 #ufw allow "Apache"
-ufw allow "Apache Full"
+ufw allow 80/tcp
+ufw allow 443/tcp
+ufw allow proto tcp from $SERVER1 to any port 80
+ufw allow proto tcp from $SERVER1 to any port 443
 
 # do not log
 
