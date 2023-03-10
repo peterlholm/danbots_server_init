@@ -27,6 +27,7 @@ ufw allow 123/udp
 
 ufw allow proto tcp from $FUTUREBOX to any port ssh
 ufw allow proto tcp from $FUTUREBOXNET to any port ssh
+ufw deny ssh
 
 # mysql
 
@@ -51,7 +52,7 @@ ufw allow proto tcp from $SERVER1 to any port 443
 #ufw deny from 44.200.239.121
 
 echo "\nDeny and do not log services\n"
-#ufw deny 23/tcp         # telnet
+ufw deny 23/tcp         # telnet
 #ufw deny "Apache Secure"        # do not log
 #ufw deny 161/udp        # snmp
 #ufw deny 529/udp        # irc
